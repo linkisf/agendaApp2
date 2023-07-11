@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Agenda</string>
+    <string name="btn_adicionar_aluno">btn_adicionar_aluno</string>
 </resources>
