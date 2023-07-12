@@ -1,28 +1,28 @@
-package alura.com.br.agenda;
+package alura.com.br.agenda.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends Activity {
+import alura.com.br.agenda.R;
+
+public class ListaAlunoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_lista_alunos);
+        setTitle("Lista de Alunos");
 
         ArrayList<String> alunos = new ArrayList<String>(Arrays.asList("Alexa", "Jose", "Fran"));
 
 
-        ListView listaDeAlunos = findViewById(R.id.activity_main_lista_de_alunos);;
+        ListView listaDeAlunos = findViewById(R.id.activity_lista_de_alunos_listview);;
 
         listaDeAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alunos));
 
