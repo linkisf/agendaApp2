@@ -2,12 +2,15 @@ package alura.com.br.agenda.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.Serializable;
 
 import alura.com.br.agenda.DAO.AlunoDAO;
 import alura.com.br.agenda.R;
@@ -29,6 +32,15 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         setTitle(TITULO_APPBAR);
         inicializacaoDosCampos();
         configuraBotaoSalvar();
+
+        Intent dados = getIntent();
+        Aluno aluno = (Aluno)dados.getSerializableExtra("aluno");
+
+//        Log.i("alunopassado", "onCreate: " + aluno.getNome());
+
+        campoNome.setText(aluno.getNome());
+        campoTelefone.setText(aluno.getTelefone());
+        campoEmail.setText(aluno.getEmail());
     }
 
     @NonNull
